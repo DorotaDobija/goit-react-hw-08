@@ -7,16 +7,16 @@ import * as Yup from "yup";
 
 export const LoginForm = () => {
 
-    const LoginId = useId();
+    const EmailId = useId();
     const passwordId = useId();
     
     const initialValues = {
-        login: "",
+        email: "",
         password: "",
     }
 
     const LoginSchema = Yup.object().shape(
-        {login: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
+        {email: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
         password: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
     }
     )
@@ -29,9 +29,9 @@ export const LoginForm = () => {
     return (
 <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={LoginSchema}>
     <Form className={css.contact_form}>
-        <label htmlFor={LoginId}>Login:</label>
-        <Field type="text" name="login" id={LoginId}/>
-        <ErrorMessage name="login" render={msg => <span className={css.error}>{msg}</span>} />
+        <label htmlFor={EmailId}>Email:</label>
+        <Field type="email" name="email" id={EmailId}/>
+        <ErrorMessage name="email" render={msg => <span className={css.error}>{msg}</span>} />
         <label htmlFor={passwordId}>Password:</label>
         <Field type="password" name="password" id={passwordId}/>
         <ErrorMessage name="password" render={msg => <span className={css.error}>{msg}</span>} />

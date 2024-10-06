@@ -3,10 +3,10 @@ import { ContactForm } from "../components/ContactForm/ContactForm"
 import { ContactList } from "../components/ContactList/ContactList"
 import { SearchBox } from "../components/SearchBox/SearchBox"
 import { useEffect } from "react";
-import { fetchContacts } from "../redux/operations";
-import { selectError, selectIsLoading } from "../redux/selectors";
+import { fetchContacts } from "../redux/contacts/operations";
+import { selectError, selectIsLoading } from "../redux/contacts/selectors";
 
-export const Phonebook = () => {
+export default function Phonebook  ()  {
 
 const dispatch = useDispatch(); 
 const error = useSelector(selectError);

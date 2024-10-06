@@ -1,4 +1,4 @@
-export const Home = () => {
+export default function Home  ()  {
     return (
         <>
          <h2>Welcome in Phonebook 📖</h2>
