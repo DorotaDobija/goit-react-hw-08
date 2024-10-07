@@ -4,6 +4,8 @@ import css from './ContactForm.module.css'
 import { useId } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import toast, { Toaster } from "react-hot-toast";
+toast
 
 export const ContactForm = () => {
 
@@ -26,10 +28,12 @@ export const ContactForm = () => {
         dispatch(addContact({
             name: values.name,
             phone: values.phone,
-        }))
+        }));
         actions.resetForm();
     }
     return (
+        <div>
+        <Toaster/>
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={ContactFormSchema}>
         <Form className={css.contact_form}>
             <label htmlFor={nameId}>Name</label>
@@ -41,5 +45,6 @@ export const ContactForm = () => {
             <button type="submit" >Add contact</button>
         </Form>
     </Formik>
+    </div>
     )
 }

@@ -23,8 +23,7 @@ useEffect(()=> {
   dispatch(refreshUser())
 }, [dispatch])
   
-  return (
-    isRefreshing ? (<p>Refreshing user...</p>) : (
+  return isRefreshing ? (<p>Refreshing user...</p>) : (
       <SharedLayout>
       <Routes>
       <Route path='/' element={<HomePage/>} />
@@ -34,8 +33,7 @@ useEffect(()=> {
     </Routes>
     </SharedLayout>
     )
-    
-  )
+  
 }
 
 

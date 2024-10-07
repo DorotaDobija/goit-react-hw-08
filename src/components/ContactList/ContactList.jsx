@@ -16,7 +16,7 @@ const contactToRender = contacts.filter((contact) => contact.name.toLowerCase().
         <ul className={css.contact_list}>
 {contactToRender.map((contact) => {
     return <li key={contact.id}>
-<Contact name={contact.name} phone={contact.phone} id={contact.id}/>
+<Contact name={contact.name} phone={contact.number} id={contact.id}/>
 </li>
 })}
      </ul>

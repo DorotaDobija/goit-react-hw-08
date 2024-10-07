@@ -24,8 +24,8 @@ export const RegisterForm = () => {
 
     const LoginSchema = Yup.object().shape(
         {name: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
-        email: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
-        password: Yup.string().min(5, "Too short").max(15, "Too long").required("Required"),
+        email: Yup.string().min(5, "Too short").required("Required"),
+        password: Yup.string().min(5, "Too short").required("Required"),
     }
     )
 
@@ -37,11 +37,6 @@ export const RegisterForm = () => {
             email: values.email,
             password: values.password,
         }))
-        // console.log({
-        //         name: values.name,
-        //         email: values.email,
-        //         password: values.password,
-        //     })
         actions.resetForm();
     }
 
