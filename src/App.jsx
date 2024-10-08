@@ -9,7 +9,7 @@ import { refreshUser } from './redux/auth/operations';
 import { selectIsRefreshing } from './redux/auth/selectors';
 
 
-const HomePage = lazy(() => import("./pages/Home"));
+const HomePage = lazy(() => import("./pages/Home/Home"));
 const LoginPage = lazy(() => import("./pages/Login"));
 const RegisterPage = lazy(() => import("./pages/Register"));
 const PhonebookPage = lazy(() => import("./pages/Phonebook"));

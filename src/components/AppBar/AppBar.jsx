@@ -12,7 +12,7 @@ const isLoggedIn = useSelector(selectIsLoggedIn);
     return (
         <div className={css.app_bar}>
         <Nav/>
-        {isLoggedIn ?<UserMenu/> :<AuthNav/>}
+        {isLoggedIn ? <UserMenu/> : <AuthNav/>}
         </div>
     )
 }
